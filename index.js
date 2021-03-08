@@ -26,7 +26,7 @@ const Levels = require('discord-xp');
     require(`./handlers/${handler}`)(client, Discord);
 })
 
-mongoose.connect(config.mongodb, {
+mongoose.connect(process.env.MONGODB_LOGIN, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
@@ -41,9 +41,9 @@ Levels.setURL('mongodb+srv://theimpossiblequiz:comrade@comradepengwin.sq3es.mong
 client.on('ready', () => {
     console.log(`logged in as ${client.user.tag}`);
     client.user.setPresence({
-        status: `dnd`,
+        status: `online`,
         activity: {
-            name: 'Beta Testing!',
+            name: 'On Server!',
             type: 'PLAYING'
         }
     });
@@ -69,4 +69,4 @@ client.on('message', message =>{
 })
 
 
-client.login(config.token);
+client.login(process.env.DISCORD_TOKEN);

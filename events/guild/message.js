@@ -4,7 +4,7 @@ const profileModel = require('../../models/profileSchema');
 const Levels = require('discord-xp');
 module.exports = async (Discord, client, message) => {
     if(message.author.bot) return;
-    const prefix = config.prefix;
+    const prefix = process.env.BOT_PREFIX
     let profileData;
     try {
         profileData = await profileModel.findOne({ userID: message.author.id });
