@@ -1,0 +1,5 @@
+{
+    "token": "Nzc0NTExNzQ1NzU4Mzk2NDM2.X6Y2RQ.6DGSOQ1OtGsyScG-QXpZrCxDObA",
+    "prefix": "$",
+    "mongodb": "mongodb+srv://theimpossiblequiz:comrade@comradepengwin.sq3es.mongodb.net/mainDB?retryWrites=true&w=majority"
+}
