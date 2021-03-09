@@ -4,8 +4,6 @@ require('dotenv').config();
 
 const newUsers = new Discord.Collection();
 
-const config = require('./config.json')
-
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION" ]});
 
 const ytdl = require('ytdl-core');
