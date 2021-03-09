@@ -13,7 +13,7 @@ module.exports = {
         client.channels.cache.get(pollChannel).send('@everyone, There is a new poll:')
 
         let embedPoll = new Discord.MessageEmbed()
-        .setTitle('💥NEW PUBLIC POLL!💥')
+        .setTitle(`💥NEW PUBLIC POLL! By: ${message.author.username}💥`)
         .setColor("RANDOM")
         .setAuthor('Commrade Pengin™️', 'https://i.imgur.com/mN1TvFo.png', 'https://discord.js.org')
         .setDescription(pollDescription)
