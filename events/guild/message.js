@@ -1,5 +1,4 @@
 const cooldowns = new Map();
-const config = require('../../config.json');
 const profileModel = require('../../models/profileSchema');
 const Levels = require('discord-xp');
 module.exports = async (Discord, client, message) => {
