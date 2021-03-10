@@ -34,8 +34,7 @@ mongoose.connect(process.env.MONGODB_LOGIN, {
     console.log(err);
 })
 
-Levels.setURL('mongodb+srv://theimpossiblequiz:comrade@comradepengwin.sq3es.mongodb.net/mainDB?retryWrites=true&w=majority')
-
+Levels.setURL('process.env.MONGODB_LOGIN')
 client.on('ready', () => {
     console.log(`logged in as ${client.user.tag}`);
     client.user.setPresence({
