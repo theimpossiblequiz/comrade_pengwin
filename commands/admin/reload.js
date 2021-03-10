@@ -12,9 +12,9 @@ module.exports = {
         let category = args[0];
         let command = args[1].toLowerCase();
         try {
-            delete require.cache[require.resolve(`../../Commands/${category}/${command}.js`)]//Change the path depending on how are your folders located.
+            delete require.cache[require.resolve(`../../commands/${category}/${command}.js`)]//Change the path depending on how are your folders located.
             client.commands.delete(command);
-            const pull = require(`../../Commands/${category}/${command}.js`);
+            const pull = require(`../../commands/${category}/${command}.js`);
             client.commands.set(command, pull);
 
             return message.channel.send(`**${command}** was reloaded succesfully!`);
