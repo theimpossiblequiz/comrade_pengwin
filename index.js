@@ -40,7 +40,7 @@ client.on('ready', () => {
     client.user.setPresence({
         status: `online`,
         activity: {
-            name: 'On Server!',
+            name: '$help | v.2.0.0 | 24/7 Hosting!',
             type: 'PLAYING'
         }
     });

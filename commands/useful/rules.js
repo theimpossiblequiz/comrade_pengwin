@@ -8,7 +8,9 @@ module.exports ={
         const embed = new Discord.MessageEmbed()
         .setTitle(`**Welcome to the Pengwin Bois!**`)
         .setAuthor('Pengwin bois Staff', 'https://i.imgur.com/mN1TvFo.png')
+        .setThumbnail('https://www.westchestercomdiv.com/wp-content/uploads/sites/638/2019/06/images.png')
         .setDescription(`**RULES:**\n`
+        + `Please read all of the rules before you continue to the <#793952699615150120! Thank you!`
         + `\n`
         + `1. Be Nice!\n\n`
         + `2. Please respect the topics for each channel.\n\n`
