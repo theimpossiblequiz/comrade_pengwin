@@ -9,7 +9,7 @@ module.exports = {
     async execute(message, args, cmd, client, Discord, profileData) {
       const totalAmount = profileData.eddies + profileData.bank
 
-      const target = message.mentions.users.first() || args[0]
+      const target = message.mentions.members.first()
       if(!target){
          let moneyEmbed = new Discord.MessageEmbed()
           .setColor("#006400")
