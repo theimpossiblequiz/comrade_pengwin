@@ -48,7 +48,7 @@ module.exports = {
             {name: '$defend', value: 'This is just a fun little command you can joke around with.'},
             {name: '$hello', value: 'Say hello to everyone.'},
             {name: '$motherland', value: 'This command tells you the motherland location'},
-            {name: '$naoh', value: 'This is the owner of the server.'},
+            {name: '$noah', value: 'This is the owner of the server.'},
             {name: '$pizza',  value: 'This is a pizza command' },
             {name: '$pog',  value: 'Poggers' },
             {name: '$work',  value: 'Just a fun command saying you are leaving for work.' },
@@ -64,10 +64,10 @@ module.exports = {
                     {name: `\u200B`, value: `\u200B`},
                     {name: '$devs', value: 'This will the devlopers of Comrade Pengwin.'},
                     {name: '$ping', value: 'This will tell you the bot ping and the Discord API ping.'},
-                    {name: 'poll', value: 'This will do a public poll. The use fo the command is ```$poll [the question you want to be asked]```. This command can only be used by staff members!'},
+                    {name: '$poll', value: 'This will do a public poll. The use fo the command is ```$poll [the question you want to be asked]```. This command can only be used by staff members!'},
                     {name: '$so', value: 'This command will allow you to shoutout your stream! The use of this command is: ```$so [Discord Username] [Twitch Username]```!'},
                     {name: '$twitch', value: 'This command will give you the link to aPengwin8\'s twitch channel.'},
-                    {name: 'yt', value: 'This will bring you to Pengwin8\'s YouTube channel.'}
+                    {name: '$yt', value: 'This will bring you to Pengwin8\'s YouTube channel.'}
                 )
         
         const musicEmbed = new Discord.MessageEmbed()
