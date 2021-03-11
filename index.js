@@ -34,7 +34,7 @@ mongoose.connect(process.env.MONGODB_LOGIN, {
     console.log(err);
 })
 
-Levels.setURL('process.env.MONGODB_LOGIN')
+Levels.setURL(process.env.MONGODB_LOGIN)
 client.on('ready', () => {
     console.log(`logged in as ${client.user.tag}`);
     client.user.setPresence({
