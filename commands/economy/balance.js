@@ -15,7 +15,7 @@ module.exports = {
           let MoneyEmbed = new Discord.MessageEmbed()
           .setColor("#006400")
           .setTitle(`\`${target.username}\` BANK ACCOUNT`)
-          .setAuthor(`${target.username}`, message.author.displayAvatarURL())
+          .setAuthor(`${target.username}`, message.target.displayAvatarURL())
           .setDescription(
              `User Economy Information: \n\n**Available Wallet:** \`$${targetData.eddies}\`\n **Available Bank Balance:** \`$${targetData.bank}\`\n **Total Amount**: \`$${totalAmount}\``
           )
