@@ -7,7 +7,7 @@ module.exports = {
     categories: 'economy',
     description: "Check the user balance",
     async execute(message, args, cmd, client, Discord, profileData) {
-      const target = message.mentions.members.first()
+      const target = message.mentions.users.first()
       if(target) {
           const targetData = await profileModel.findOne({ userID: target.id, serverID: message.guild.id })
           if(!targetData) return message.channel.send("This user does not exist on this database")
