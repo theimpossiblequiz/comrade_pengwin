@@ -55,6 +55,14 @@ module.exports = {
             break;
         }
       });
+
+      let ticketLog = '784629794276900865'
+
+      let logEmbed = new Discord.MessageEmbed()
+      .setTitle('New Ticket Made')
+      .setAuthor(`${message.author.username}`)
+      .setDescription(`There was a ticket made.\n\n ***Ticket info:***\n **User that opened ticket:** \`${message.author.username}\`\n **Reason:** \`${reason}\``)
+      client.channels.cache.get(ticketLog).send(logEmbed);
   
       message.channel
         .send(`We will be right with you! ${channel}`)
