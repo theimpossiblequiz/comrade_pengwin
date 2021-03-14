@@ -10,7 +10,7 @@ const ytdl = require('ytdl-core');
 
 const Welcome = require('discord-welcome');
 
-const memberCounter = require('../../counters/member-counter');
+const memberCounter = require('comrade_pengwin/counters/member-counter.js/');
 
 const fs = require('fs');
 
