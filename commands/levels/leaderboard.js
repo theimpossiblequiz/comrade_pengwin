@@ -16,7 +16,7 @@ module.exports = {
 
         const embed = new Discord.MessageEmbed()
         .setTitle(`${message.guild.name} Leaderboard!`)
-        .setColor("ORANGE")
+        .setColor("BLUE")
         .setDescription(`${lb.join("\n\n")}`)
         .setTimestamp()
         .setFooter(`This is the current Leader Board for the server: ${message.guild.name}`)
