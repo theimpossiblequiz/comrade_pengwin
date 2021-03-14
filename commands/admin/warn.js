@@ -28,7 +28,8 @@ module.exports = {
             data.punishments.unshift({
                 PunishType: 'Warn',
                 Mod: message.author.id,
-                Reason: reason,    
+                Reason: reason, 
+                Timestamp: new Date().getTime(),   
             });
 
             data.save();
