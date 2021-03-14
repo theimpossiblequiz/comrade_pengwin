@@ -10,7 +10,7 @@ const ytdl = require('ytdl-core');
 
 const Welcome = require('discord-welcome');
 
-const memberCounter = require('./counters/member-counter');
+const memberCounter = require('../Pengwin/counters/member-counter');
 
 const fs = require('fs');
 
@@ -40,7 +40,7 @@ client.on('ready', () => {
     client.user.setPresence({
         status: `online`,
         activity: {
-            name: '$help | v.2.0.0 | 24/7 Hosting!',
+            name: '$help | v.2.0.3 | 24/7 Hosting!',
             type: 'PLAYING'
         }
     });

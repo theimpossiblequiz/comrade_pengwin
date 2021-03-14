@@ -59,9 +59,10 @@ module.exports = {
                 guildID: message.guild.id,
                 userID:toWarn.id,
                 punishments: [{
-                    PuishType: 'Warn',
+                    PunishType: 'Warn',
                     Mod: message.author.id,
                     Reason: reason,
+                    Timestamp: new Date().getTime(),
                 }, ],
             });
             newData.save();

@@ -15,7 +15,7 @@ module.exports = {
         let embedPoll = new Discord.MessageEmbed()
         .setTitle(`💥NEW PUBLIC POLL! By: ${message.author.username}💥`)
         .setColor("RANDOM")
-        .setAuthor('Commrade Pengin™️', 'https://i.imgur.com/mN1TvFo.png', 'https://discord.js.org')
+        .setAuthor('Commrade Pengwin™️', 'https://i.imgur.com/mN1TvFo.png', 'https://discord.js.org')
         .setDescription(pollDescription)
         .addFields(
             {name: `\u200B`, value: `\u200b`},
