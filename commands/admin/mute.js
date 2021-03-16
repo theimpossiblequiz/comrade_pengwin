@@ -1,9 +1,10 @@
 const ms= require('ms');
+const Punishments = require('../../models/modSchema');
 module.exports = {
     name: 'mute',
     categories: 'admin',
     description: 'this mutes a member for a set period of time.',
-    execute(message, args, cmd, client, Discord){
+    async execute(message, args, cmd, client, Discord){
         
         if(!message.member.roles.cache.has('703787206363578448')) return message.reply('You do not have the permissions to run this command.')
 
@@ -29,6 +30,37 @@ module.exports = {
                 memberTarget.roles.remove(muteRole.id);
                 memberTarget.roles.add(mainRole.id);
             }, ms(args[1]));
+
+            const timeout = args[1] || "365days"
+
+            let data = await Punishments.findOne({
+                guildID: message.guild.id,
+                userID: target.id
+            });
+    
+            if(data){
+                data.punishments.unshift({
+                    PunishType: 'Mute',
+                    Mod: message.author.id,
+                    Timestamp: new Date().getTime(),
+                    Reason: "They where given a timout for breaking rules.",
+                });
+                data.save();
+    
+            } else if(!data){
+                let newData = new punishments({
+                    guildID: message.guild.id,
+                    userID: target.id,
+                    punishments: [{
+                        PunishType: 'Mute',
+                        Mod: message.author.id,
+                        Timestamp: new Date().getTime(),
+                        Reason: "They where given a timout for breaking rules.",
+                    },],
+                });
+                newData.save();
+                console.log(data);
+            }
         } else {
             message.reply('that username is invalid or does not exist!');
         }
