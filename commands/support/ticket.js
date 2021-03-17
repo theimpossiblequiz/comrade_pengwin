@@ -1,4 +1,5 @@
 const { DiscordAPIError } = require("discord.js");
+const Ticketlist = require('../../models/ticketSchema');
 
 module.exports = {
     name: "ticket",
@@ -9,6 +10,37 @@ module.exports = {
       const channel = await message.guild.channels.create(`ticket: ${message.author.tag}`);
 
       const reason = message.content.split(" ").slice(1).join(" ");
+
+      let data = await Ticketlist.findOne({
+        guildID: message.guild.id,
+        userID: message.author.id,
+      });
+
+      if(data){
+        data.ticket.unshift({
+          Ticket: 'New Ticket',
+          guildID: message.guild.id,
+          userID: message.author.id,
+          Server: message.guild.name,
+          Timestamp: new Date().getTime(),
+          Reason: reason,
+        });
+        data.save();
+      }else if(!data){
+        let newData = new ticket({
+         guildID: message.guild.id,
+         userID: message.author.id,
+         ticket: [{
+            Ticket: 'New Ticket',
+            guildID: message.guild.id,
+            userID: message.author.id,
+            Server: message.guild.name,
+            Timestamp: new Date().getTime(),
+            Reason: reason,
+         },],
+        })
+        newData.save();
+      }
 
       if(!reason) return message.reply('You have to  provide a reason!');
       
@@ -76,4 +108,3 @@ module.exports = {
         });
     },
   };
-  
