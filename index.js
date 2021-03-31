@@ -40,7 +40,7 @@ client.on('ready', () => {
     client.user.setPresence({
         status: `online`,
         activity: {
-            name: '$help | v.2.0.3 | 24/7 Hosting!',
+            name: '$help | v.2.1.0 | Badword Filter System',
             type: 'PLAYING'
         }
     });
