@@ -57,7 +57,7 @@ client.once('guildMemberAdd', (member) => {
     client.channels.cache.get(channelID).send(embed);
 });
 //For badword filter
-client.on('message', message =>{
+client.on('message', async message =>{
     if(!message.member.hasPermission("ADMINISTRATOR")){
 
         let confirm = false;
@@ -69,7 +69,7 @@ client.on('message', message =>{
         }
         if(confirm) {
             message.delete();
-            return message.reply('Please do not cuss in the server!')
+            message.reply(`Please don't say bad-words in the server!`).then((msg) => {msg.delete({timeout: 10000})});
         }
     }
 })
