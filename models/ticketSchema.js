@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 let ticketSchema = new mongoose.Schema({
     guildID: String,
     userID: String,
-    ticket: Array
+    ticket: Array,
 });
 
-const messageModel = module.exports = mongoose.model('Tickets', ticketSchema);
+const messageModel = module.exports = mongoose.model('Ticket_System', ticketSchema);

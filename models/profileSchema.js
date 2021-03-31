@@ -7,6 +7,6 @@ const profileSchema = new mongoose.Schema({
   bank: { type: Number },
 });
 
-const model = mongoose.model("currency_system", profileSchema);
+const model = mongoose.model("Currency_System", profileSchema);
 
 module.exports = model;

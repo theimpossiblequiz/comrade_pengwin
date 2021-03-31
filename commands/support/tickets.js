@@ -27,6 +27,7 @@ module.exports = {
             }
             const embed = new Discord.MessageEmbed()
             .setDescription(`${reply}` )
+            .setColor("RANDOM")
             .setAuthor(`${target.tag}'s Tickets`, target.displayAvatarURL())
             .setTimestamp()
             message.reply(embed);

@@ -2,6 +2,8 @@
 
 require('dotenv').config();
 
+const { badwords } = require('./data.json')
+
 const newUsers = new Discord.Collection();
 
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION" ]});
@@ -54,12 +56,21 @@ client.once('guildMemberAdd', (member) => {
     .setFooter('Created by Lazysensy#1075 & theimpossiblequiz#6969', 'https://i.imgur.com/iGY5LBj.png');
     client.channels.cache.get(channelID).send(embed);
 });
-
+//For badword filter
 client.on('message', message =>{
-    if(message.content === 'fuck'){
-        message.reply('Please keep the language SFW!')
-    } else if(message.content === 'cunt'){
-        message.reply(`Please don\'t say that.`)
+    if(!message.member.hasPermission("ADMINISTRATOR")){
+
+        let confirm = false;
+
+        var i;
+        for(i = 0;i < badwords.length; i++){
+            if(message.content.toLowerCase().includes(badwords[i].toLowerCase()))
+                confirm = true;
+        }
+        if(confirm) {
+            message.delete();
+            return message.reply('Please do not cuss in the server!')
+        }
     }
 })
 

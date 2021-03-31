@@ -43,7 +43,6 @@ module.exports = async (Discord, client, message) => {
     if(!cooldowns.has(command.name)){
         cooldowns.set(command.name, new Discord.Collection());
     }
-    if(!command) return message.reply('This command is not a command or does not exist.');
 
     const current_time = Date.now();
     const time_stamps = cooldowns.get(command.name);

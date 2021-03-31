@@ -26,7 +26,8 @@ module.exports = {
 
         let data = await Punishments.findOne({
             guildID: message.guild.id,
-            userID: toBan.id
+            userID: toBan.id,
+            
         });
 
         if(data){
