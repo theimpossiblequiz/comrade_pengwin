@@ -1,5 +1,5 @@
 const Ticketlist = require('../../models/ticketSchema');
-//const ticket = require('../../models/ticketSchema');
+const ticket = require('../../models/ticketSchema');
 
 module.exports = {
     name: "ticket",

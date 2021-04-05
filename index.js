@@ -1,8 +1,6 @@
- const Discord = require('discord.js');
+const Discord = require('discord.js');
 
 require('dotenv').config();
-
-const { badwords } = require('./data.json')
 
 const newUsers = new Discord.Collection();
 
@@ -35,17 +33,8 @@ mongoose.connect(process.env.MONGODB_LOGIN, {
 })
 
 Levels.setURL(process.env.MONGODB_LOGIN)
-client.on('ready', () => {
-    console.log(`logged in as ${client.user.tag}`);
-    client.user.setPresence({
-        status: `online`,
-        activity: {
-            name: '$help | v.2.1.0 | Badword Filter System',
-            type: 'PLAYING'
-        }
-    });
-})
-client.once('guildMemberAdd', (member) => {
+
+/client.once('guildMemberAdd', (member) => {
     const channelID ='703789549679280159';
     if(member.guild.id != '669902459204010004') return;
     const embed = new Discord.MessageEmbed()
@@ -56,23 +45,5 @@ client.once('guildMemberAdd', (member) => {
     .setFooter('Created by Lazysensy#1075 & theimpossiblequiz#6969', 'https://i.imgur.com/iGY5LBj.png');
     client.channels.cache.get(channelID).send(embed);
 });
-//For badword filter
-client.on('message', async message =>{
-    if(!message.member.hasPermission("ADMINISTRATOR")){
-
-        let confirm = false;
-
-        var i;
-        for(i = 0;i < badwords.length; i++){
-            if(message.content.toLowerCase().includes(badwords[i].toLowerCase()))
-                confirm = true;
-        }
-        if(confirm) {
-            message.delete();
-            message.reply(`Please don't say bad-words in the server!`).then((msg) => {msg.delete({timeout: 10000})});
-        }
-    }
-})
-
 
 client.login(process.env.DISCORD_TOKEN);

@@ -1,7 +1,13 @@
 const cooldowns = new Map();
+
+const { badwords } = require('../../badwords.json');
+
 require('dotenv').config()
+
 const profileModel = require('../../models/profileSchema');
+
 const Levels = require('discord-xp');
+
 module.exports = async (Discord, client, message) => {
     if(message.author.bot) return;
     const prefix = process.env.PREFIX
@@ -20,6 +26,22 @@ module.exports = async (Discord, client, message) => {
   } catch (err) {
     console.log(err);
   }
+
+  //Badword Filter
+  if(!message.member.hasPermission("ADMINISTRATOR")){
+
+    let confirm = false;
+
+    var i;
+    for(i = 0;i < badwords.length; i++){
+        if(message.content.toLowerCase().includes(badwords[i].toLowerCase()))
+            confirm = true;
+        }
+        if(confirm) {
+            message.delete();
+            message.reply(`Please don't say bad-words in the server!`).then((msg) => {msg.delete({timeout: 10000})});
+        }
+    }
   
  
   
