@@ -16,7 +16,7 @@ module.exports = {
         { name: 'New Features:', value: 'The bot now runs commands a bit different, there is now a more advanced music system(BETA), the ping command now also gives you the API ping, and lastly the bot now has cooldowns for some commands! '}
 	    )
 	    .setTimestamp()
-	    .setFooter('Made by theimpossiblequiz#6969 & LazeySensy#1075', 'https://i.imgur.com/iGY5LBj.png', 'https://discord.js.org');
+	    .setFooter('Made by theimpossiblequiz#6969 & LazySensy#1075', 'https://i.imgur.com/iGY5LBj.png', 'https://discord.js.org');
 
         message.channel.send(newEmbed)
     }
