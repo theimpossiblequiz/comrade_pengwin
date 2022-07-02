@@ -4,7 +4,7 @@ module.exports = {
     description: 'This will start a poll.',
     async execute(message, args, cmd, client, Discord){
 
-        if(!message.member.roles.cache.has('703787206363578448')) return message.reply('You do not have the permissions to run this command.')
+        if(!message.member.roles.cache.has('782997114627162112')) return message.reply('You do not have the permissions to run this command.')
 
         let pollChannel = '792218174740234280'
         let pollDescription = args.slice(0).join('  ');

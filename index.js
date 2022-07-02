@@ -34,7 +34,7 @@ mongoose.connect(process.env.MONGODB_LOGIN, {
 
 Levels.setURL(process.env.MONGODB_LOGIN)
 
-/client.once('guildMemberAdd', (member) => {
+client.once('guildMemberAdd', (member) => {
     const channelID ='703789549679280159';
     if(member.guild.id != '669902459204010004') return;
     const embed = new Discord.MessageEmbed()

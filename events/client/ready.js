@@ -7,7 +7,7 @@ module.exports = (Discord, client) => {
     client.user.setPresence({
         status: `online`,
         activity: {
-            name: '$help | v.2.1.0 | I havent been updated recently',
+            name: '$help | v.2.1.1 | I just got an update',
             type: 'PLAYING'
         }
     });

@@ -6,7 +6,7 @@ module.exports = {
     categories: 'economy',
     description: 'This will take coins to a member.',
     async execute(message, args, cmd, client, Discord, profileData){
-        if(!message.member.roles.cache.has('812920285698195477')) return message.channel.send('You can not use this command! You don\'t have the role: \`staff\`');
+        if(!message.member.roles.cache.has('782997114627162112')) return message.channel.send('You can not use this command! You don\'t have the role: \`Developer\`');
 
         if(!args.length) return message.channel.send('You need to mention a user to give coins to!');
 

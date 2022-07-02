@@ -55,6 +55,7 @@ module.exports = {
 	        )
             .setTimestamp()
 	        .setFooter('Made by theimpossiblequiz#6969 & LazySensy#1075','https://i.imgur.com/iGY5LBj.png', 'https://discord.js.org');
+            
         const usefulEmbed = new Discord.MessageEmbed()
                 .setColor("#00ffdb")
                 .setTitle('Useful Commands (Page 3)')
@@ -69,6 +70,8 @@ module.exports = {
                     {name: '$twitch', value: 'This command will give you the link to aPengwin8\'s twitch channel.'},
                     {name: '$yt', value: 'This will bring you to Pengwin8\'s YouTube channel.'}
                 )
+                .setTimestamp()
+                .setFooter('Made by theimpossiblequiz#6969 & LazySensy#1075', 'https://i.imgur.com/iGY5LBj.png', 'https://discord.js.org');
         
         const musicEmbed = new Discord.MessageEmbed()
             .setColor("#E91E63")
